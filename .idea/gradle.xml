@@ -14,7 +14,6 @@
         </option>
       </GradleProjectSettings>
     </option>
-    <option name="gradleVmOptions" value="-Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=8103" />
   </component>
 </project>
 
