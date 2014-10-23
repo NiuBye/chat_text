@@ -2,4 +2,6 @@
 <resources>
     <color name="transparent">#00000000</color>
     <color name="gray">#ffafafaf</color>
+    <color name="btn_send_pressed">#ff308d0e</color>
+    <color name="btn_send_normal">#ff45bf1a</color>
 </resources>

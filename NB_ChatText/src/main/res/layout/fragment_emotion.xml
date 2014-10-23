@@ -1,13 +1,95 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFF"
+    android:paddingBottom="5dp"
     tools:context="com.brook.NB_ChatText.EmotionFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="1px"
+        android:layout_marginBottom="5dp"
+        android:background="#ffb7b7b7"/>
+    <RelativeLayout
+        android:id="@+id/chat_text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/chat_text_sendbtn"
+            android:layout_alignParentRight="true"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:textColor="#FFF"
+            android:layout_centerInParent="true"
+            android:text="发送"
+            android:layout_marginRight="3dp"
+            android:textSize="12sp"
+            android:background="@drawable/btn_send"/>
+        <LinearLayout
+            android:id="@+id/chat_text"
+            android:layout_toLeftOf="@id/chat_text_sendbtn"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/chat_bg"
+            android:orientation="horizontal">
 
-</FrameLayout>
+            <com.brook.NB_ChatText.ChatEditText
+                android:id="@+id/chat_text_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:paddingBottom="3dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#0000"
+                android:textSize="16sp" />
+
+            <ToggleButton
+                android:id="@+id/chat_text_facebtn"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/btn_face"
+                android:textOff=""
+                android:textOn="" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/chat_text_facepanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <View
+            android:id="@+id/chat_text_splitter"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray" />
+
+        <GridView
+            android:id="@+id/chat_text_facegrid"
+            android:layout_below="@id/chat_text_splitter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="7"
+            android:background="@color/transparent"
+            android:horizontalSpacing="1dp"
+            android:verticalSpacing="1dp"
+            android:stretchMode="columnWidth"
+            android:cacheColorHint="@color/transparent"
+            android:gravity="center"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp" />
+    </RelativeLayout>
+</LinearLayout>
+
